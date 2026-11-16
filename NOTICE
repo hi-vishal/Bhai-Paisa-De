@@ -1,0 +1,16 @@
+Bhai Paise De
+Copyright (c) 2026 Vishal Gupta
+
+"Bhai Paise De" and the Bhai Paise De logo are trademarks of Vishal Gupta. The MIT License covers
+the code only; it does not grant permission to use the name or logo for another product.
+
+This product includes third-party work under these licenses:
+
+- Animated emoji: Noto Emoji Animation, Google. Creative Commons Attribution 4.0 (CC BY 4.0).
+- Fonts: Bricolage Grotesque and Kalam. SIL Open Font License 1.1.
+- React, React DOM, React Router, Framer Motion, Express, compression, canvas-confetti, qrcode,
+  web-push, ws, nostr-tools, @noble/curves, @noble/hashes, @scure/base, @scure/bip32, @scure/bip39:
+  MIT License.
+- sharp, jsQR: Apache License 2.0.
+
+Full license texts ship with each package in node_modules.

@@ -1,0 +1,11 @@
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy app:8787 {
+		# the app trusts exactly one proxy hop for the client IP (rate limits)
+		header_up X-Forwarded-For {remote_host}
+	}
+	log {
+		output stdout
+		format console
+	}
+}

@@ -1,0 +1,12 @@
+# Continuous SQLite replication. Works with AWS S3, Cloudflare R2, Backblaze B2, MinIO.
+# Set LITESTREAM_ACCESS_KEY_ID, LITESTREAM_SECRET_ACCESS_KEY, LITESTREAM_BUCKET, LITESTREAM_ENDPOINT in .env.
+dbs:
+  - path: /data/bhai.sqlite
+    replicas:
+      - type: s3
+        bucket: ${LITESTREAM_BUCKET}
+        path: bhai-paise-de
+        endpoint: ${LITESTREAM_ENDPOINT}
+        region: auto
+        sync-interval: 1s
+        retention: 720h

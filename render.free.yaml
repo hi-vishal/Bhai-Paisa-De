@@ -1,0 +1,35 @@
+# Render FREE blueprint: New → Blueprint → pick this repo → file path "render.free.yaml".
+# Free plan = no disk and it sleeps after 15 min. The database is restored from a bucket on every
+# boot (Litestream), and an uptime monitor pinging /healthz keeps it awake. See README.md → "Hosting".
+services:
+  - type: web
+    name: bhai-paise-de
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.free
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BPD_TRUST_PROXY
+        value: "1"
+      - key: BPD_PUBLIC_URL
+        sync: false
+      - key: BPD_NOSTR_SECRET
+        sync: false
+      - key: BPD_AUTH_SECRET
+        sync: false
+      - key: BPD_VAPID_PUBLIC
+        sync: false
+      - key: BPD_VAPID_PRIVATE
+        sync: false
+      - key: BPD_TIP_UPI
+        sync: false
+      - key: LITESTREAM_ACCESS_KEY_ID
+        sync: false
+      - key: LITESTREAM_SECRET_ACCESS_KEY
+        sync: false
+      - key: LITESTREAM_BUCKET
+        sync: false
+      - key: LITESTREAM_ENDPOINT
+        sync: false

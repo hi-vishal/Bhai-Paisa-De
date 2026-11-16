@@ -1,0 +1,26 @@
+# Render Blueprint: New → Blueprint → pick this repo. Needs a paid plan for the persistent disk.
+services:
+  - type: web
+    name: bhai-paise-de
+    runtime: docker
+    plan: starter
+    region: singapore
+    healthCheckPath: /healthz
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BPD_DATA_DIR
+        value: /data
+      - key: BPD_PUBLIC_URL
+        sync: false
+      - key: BPD_TIP_UPI
+        sync: false
+      # optional crypto payments: set both to turn them on
+      - key: BPD_SOLANA_CLUSTER
+        sync: false
+      - key: BPD_SOLANA_RPC
+        sync: false
